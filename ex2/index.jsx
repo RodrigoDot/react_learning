@@ -4,6 +4,6 @@ import ReactDom from 'react-dom'
 import Component from './component'
 
 ReactDom.render(
-  <Component title='Passando PROPS' name='UHUUUU!' />,
+  <Component />,
   document.getElementById('app')
 )
