@@ -6,3 +6,12 @@ export default props => (
     <h3>{props.name}</h3>
   </div>
 )
+
+const Segundo = props => (
+  <div>
+    <h1>{props.title}</h1>
+    <h3>{props.name}</h3>
+  </div>
+)
+
+export { Segundo }

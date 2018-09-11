@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-import Component from './component'
+import Primeiro, {
+  Segundo
+} from './component'
 
 ReactDom.render(
-  <Component title='Passando PROPS' name='UHUUUU!' />,
+  <div>
+    <Primeiro title='Passando PROPS' name='Primeiro Componente!' />
+    <Segundo title='Passando PROPS' name='Segundo Componente!' />
+  </div>,
   document.getElementById('app')
 )
