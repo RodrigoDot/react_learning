@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-import ClassField from './field'
+import ClassComponent from './classComponent'
 
 ReactDom.render(
-  <ClassField initialValue='Digite algo no input abaixo!'/>,
+  <ClassComponent value={10} label='Contador' initialValue={10}/>,
   document.getElementById('app')
 )
