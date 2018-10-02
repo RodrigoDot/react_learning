@@ -8,15 +8,19 @@ import {
 } from 'redux'
 
 import ClassField from './field'
-import fieldReducer from './fieldReducer'
 
 const reducers = combineReducers({
-  field: fieldReducer
+  field: () => {
+    console.log('CALLED ON reducer handler')
+    return {
+      value: 'HUEHUEHUEHEU'
+    }
+  }
 })
 
 ReactDom.render(
   <Provider store={ createStore(reducers) }>
-    <ClassField />
+    <ClassField initialValue='Digite algo no input abaixo!'/>
   </Provider>,
   document.getElementById('app')
 )
