@@ -2,33 +2,25 @@ import React, {
   Component
 } from 'react'
 
+import { connect } from 'react-redux'
+
 class ClassField extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      value: props.initialValue
-    }
-    this.changeValue = this.changeValue.bind(this)
-  }
-
-  changeValue(event) {
-    this.setState({
-      ...this.state,
-      value: event.target.value
-    })
-  }
-
   render() {
     return (
       <div>
-        <label>{ this.state.value }</label>
+        <label>{ this.props.value }</label>
         <br/>
         <hr/>
-        <input onChange={ this.changeValue } value={ this.state.value } />
+        <input onChange={ this.changeValue } value={ this.props.value } />
       </div>
     )
   }
 }
 
-export default ClassField
+function mapStateToProps(state) {
+  return {
+    value: state.field.value
+  }
+}
+
+export default connect(mapStateToProps)(ClassField)
