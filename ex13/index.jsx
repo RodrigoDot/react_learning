@@ -10,12 +10,7 @@ import {
 import ClassField from './field'
 
 const reducers = combineReducers({
-  field: () => {
-    console.log('CALLED ON reducer handler')
-    return {
-      value: 'HUEHUEHUEHEU'
-    }
-  }
+  field: () => ({ value: 'OPA' })
 })
 
 ReactDom.render(

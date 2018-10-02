@@ -3,6 +3,9 @@ import React, {
 } from 'react'
 
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import { changeValue } from './fieldActions'
 
 class ClassField extends Component {
   render() {
@@ -11,7 +14,7 @@ class ClassField extends Component {
         <label>{ this.props.value }</label>
         <br/>
         <hr/>
-        <input onChange={ this.changeValue } value={ this.props.value } />
+        <input onChange={ this.props.changeValue } value={ this.props.value } />
       </div>
     )
   }
@@ -23,4 +26,13 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(ClassField)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      changeValue
+    },
+    dispatch
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClassField)
