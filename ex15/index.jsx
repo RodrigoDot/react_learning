@@ -7,16 +7,16 @@ import {
   createStore
 } from 'redux'
 
-import Counter from './counter'
-import counterReducer from './counterReducer'
+import ClassField from './field'
+import fieldReducer from './fieldReducer'
 
 const reducers = combineReducers({
-  counter: counterReducer
+  field: fieldReducer
 })
 
 ReactDom.render(
   <Provider store={ createStore(reducers) }>
-    <Counter />
+    <ClassField />
   </Provider>,
   document.getElementById('app')
 )
